@@ -1,4 +1,7 @@
 
 kubectl run pod-name --image=image_name -> To run the pod. 
 kubectl get pods                        -> To get the running pods. 
+kubectl create -f file_name             -> To execute the YAML file. 
+kubectl describe pod pod_name           -> To get information about single pod. 
+
             
