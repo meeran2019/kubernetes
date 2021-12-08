@@ -1,0 +1,4 @@
+
+kubectl run pod-name --image=image_name -> To run the pod. 
+kubectl get pods                        -> To get the running pods. 
+            
