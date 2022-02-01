@@ -1,16 +1,16 @@
 
 -------------------------------------------------------------------------------------------------------------------------------
-Architecture:
+ARCHITECTURE:
 -------------------------------------------------------------------------------------------------------------------------------
 
-Nodes   - It is a machine where application runs.
-Cluster - Group of nodes. Support high availability and consists of worker and master nodes. 
-Master Node - It contains control plane and controls worker nodes.
+Nodes   - It is a machine (physical or virtual) where application/container runs.
+Cluster - Group of nodes. Support high availability and consists of worker and master nodes. Also helps to sharing load. 
+Master Node - It contains control plane and controls/manages worker nodes. If one worker node fails, route the traffic to another worker node. Master nodes can be single or multiple master nodes. 
 
 Components:
 
 api-server  - Act as frontend , users, CLI interact through this. 
-etcd        - It is distributed key value pair. Stores all the kubernetes information. 
+etcd        - It is distributed key value pair. Stores all the kubernetes information. For example store cluster information. 
 scheduler   - Responsible to run container or distribute load across nodes. 
 controller  - It make sure replicas are maintained. 
 container runtime   -   It helps to run containers like docker. 
@@ -35,11 +35,15 @@ Kubectl: It is CLI to interact with kubernetes.
 -------------------------------------------------------------------------------------------------------------------------------
 
 PODS: 
-    It is kubernetes smallest object and has single instance. It can contain single or multiple container. 
+
+    It is kubernetes smallest object and has single instance. It can contain single or multiple container (helper container).
     Generally 1 to 1 relationship between pod and container. Each pod contain single container. 
     Depends upon load to increase the pod with in same or different nodes. 
 
+-------------------------------------------------------------------------------------------------------------------------------
+
 YAML Format: 
+
     apiVersion: api_version
     kind: Pod/Replicaset/Deployment 
     metadata: 
@@ -47,5 +51,7 @@ YAML Format:
       labels: (Key Value Pair) 
     spec: 
         (Depending upon object, this will change)
+
+-------------------------------------------------------------------------------------------------------------------------------
 
 
