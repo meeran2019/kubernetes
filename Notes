@@ -33,6 +33,8 @@ Kubectl: It is CLI to interact with kubernetes.
     kubectl get nodes 
 
 --------------------------------------------------------------------------------------------------------
+KUBERNETES OBJECTS:
+--------------------------------------------------------------------------------------------------------
 
 PODS: 
 
@@ -46,7 +48,7 @@ PODS:
 
 --------------------------------------------------------------------------------------------------------
 
-YAML Format: 
+YAML FORMAT: 
 
     apiVersion: api_version
     kind: Pod/Replicaset/Deployment 
@@ -100,11 +102,3 @@ NAMESPACES:
     ResourceQuota object used to assign resoure to namespaces in yaml format. 
 
 --------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-

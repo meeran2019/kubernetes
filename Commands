@@ -5,11 +5,15 @@ kubectl get nodes                       -> To get node details.
 kubectl cluster-info                    -> To get cluster details. 
 kubectl get all                         -> To get the all resource details. 
 
+--------------------------------------------------------------------------------------------------------
+
 YAML FILE: 
 
 kubectl create -f file_name             -> To execute the YAML file. New first time. 
 kubectl replace -f file_name            -> To execute the YAML file. To update the created file. 
 kubectl apply -f file_name              -> To execute the YAML file. If new create else update existing.
+
+--------------------------------------------------------------------------------------------------------
 
 POD: 
 
@@ -21,6 +25,8 @@ kubectl get pod                         -> In READY, shows the no of containers.
 kubectl delete pod pod_name             -> To delete the pod. 
 kubectl set image type name container_name=image_name   -> To update the image in pod. Type is pod.  
 kubectl edit pod pod_name               -> To edit pod properties.
+
+--------------------------------------------------------------------------------------------------------
 
 REPLICASET: 
 
@@ -34,6 +40,8 @@ kubectl scale replicaset replica_name --replicas=5      -> To update the replcia
 kubectl set image replicaset replica_name container_name=new_image_name  -> To update image in replicaset. 
 Note: While update image, requires to delete the old pod then only create new pod with new image. 
 
+--------------------------------------------------------------------------------------------------------
+
 DEPLOYMENT: 
 
 kubectl create -f deployment.yaml       -> To create the deployment from yaml file. 
@@ -45,6 +53,8 @@ kubectl delete deploy deploy_name       -> To delete the deployment.
 
 kubectl rollout history 
 kubectl rollout 
+
+--------------------------------------------------------------------------------------------------------
 
 NAMESPACE: 
 
@@ -58,14 +68,34 @@ kubectl config set-context $(kubectl config current-context) --namespace=name   
 
 kubectl get pod --all-namespaces            -> To get from all namespaces. 
 
+--------------------------------------------------------------------------------------------------------
 
+IMPERATIVE COMMANDS: 
 
+    --dry-run=client                        -> To dry run without create respurce. 
+    -o yaml                                 -> To generate yaml file format. 
+    kubectl run pod_name --image=image_name -> To create the pod. 
+    kubectl run pod_name --image=image_name --labels=key=value  -> To create the pod with labels. 
+    kubectl expose pod pod_name --port=1111 --name=service_name -> To expose the pod as service. 
+    kubectl create deploy deploy_name --image=image_name --replicas=3  -> To create deployment. 
+    kubectl run pod_name --image=image_name --port=2222     -> To create pod with container port. 
+    kubectl create namespace name           -> To create the new namespace. 
+    kubectl create deploy deploy_name --image=image_name --replicas=3 --namespace=name  -> To create deployment in specific namespace. 
 
+--------------------------------------------------------------------------------------------------------
 
+SERVICE: 
 
+    kubectl expose pod pod_name --port=1111 --name=service_name     -> Automatically use pod selector. 
+    kubectl create service service_name                             -> To update the selector. 
+    
+--------------------------------------------------------------------------------------------------------
 
+FORMATTING OUTPUT: 
 
+    -o yaml     -> Output in yaml format. 
+    -o wide     -> Gives additional information. 
+    -o json     -> Outut in json format. 
+    -o name     -> Print only resource name. 
 
-
-
-
+--------------------------------------------------------------------------------------------------------
