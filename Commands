@@ -46,6 +46,20 @@ kubectl delete deploy deploy_name       -> To delete the deployment.
 kubectl rollout history 
 kubectl rollout 
 
+NAMESPACE: 
+
+kubectl create namespace name               -> To create new namespace. 
+kubectl get namespace                       -> TO get the list of namespaces. 
+kubectl delete namespace name               -> To delete the namespace. 
+kubectl get pod -n=name  name               -> To get from specific namespace. 
+kubectl get pod --namespace=name            -> To get from specific namespace. 
+
+kubectl config set-context $(kubectl config current-context) --namespace=name   -> To switch permanently to specific namespace. 
+
+kubectl get pod --all-namespaces            -> To get from all namespaces. 
+
+
+
 
 
 

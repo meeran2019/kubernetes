@@ -82,6 +82,26 @@ DEPLOYMENTS:
     Yaml file is same as replicaset i.e) only kind will be changed. 
     Containers -> Pods -> Replicaset -> Deployment. 
 
+--------------------------------------------------------------------------------------------------------
+
+NAMESPACES: 
+
+    It is logical separation which acts separately. Useful to separate by environment etc like dev, test, prod. 
+    It consists of: 
+        kube-system
+        kube-public 
+        default 
+    Can create new namespace and assign resoures to namespaces. 
+
+    Within namespace, call directly by service name - service_name
+    Outside of namespace, call using namespace      - service_name.namespace.svc.cluster.local 
+
+    Namespace object used to create namespace in yaml format. 
+    ResourceQuota object used to assign resoure to namespaces in yaml format. 
+
+--------------------------------------------------------------------------------------------------------
+
+
 
 
 
