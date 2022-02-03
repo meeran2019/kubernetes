@@ -1,7 +1,7 @@
 
--------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
 ARCHITECTURE:
--------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
 
 Nodes   - It is a machine (physical or virtual) where application/container runs.
 Cluster - Group of nodes. Support high availability and consists of worker and master nodes. Also helps to sharing load. 
@@ -32,15 +32,19 @@ Kubectl: It is CLI to interact with kubernetes.
     kubectl cluster-info    
     kubectl get nodes 
 
--------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
 
 PODS: 
 
     It is kubernetes smallest object and has single instance. It can contain single or multiple container (helper container).
+
     Generally 1 to 1 relationship between pod and container. Each pod contain single container. 
     Depends upon load to increase the pod with in same or different nodes. 
 
--------------------------------------------------------------------------------------------------------------------------------
+    READY - Running containers in POD / Total containers in POD. 
+    State - Waiting - ImagePullBackOff error - when docker image is not available. 
+
+--------------------------------------------------------------------------------------------------------
 
 YAML Format: 
 
@@ -52,6 +56,28 @@ YAML Format:
     spec: 
         (Depending upon object, this will change)
 
--------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
+
+REPLICASETS: 
+
+    It helps to ensure the no of replica (pod) is always running. If node or pod is down, can run in another node. 
+
+    Replication Controller  -> It is older. Existing labels will NOT be considered.No Selector.  
+    Replication Set         -> It is new recommended. Existing labels will be considered. Have selector with matchLabels.
+
+    NAME              DESIRED   CURRENT   READY   AGE
+    new-replica-set   4         4         0       8s
+
+    Desired - No of replicas. 
+    Current - No of pod created. 
+    Ready   - No of pod is running. 
+
+--------------------------------------------------------------------------------------------------------
+
+LABELS AND SELECTORS:     
+
+
+
+
 
 

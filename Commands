@@ -4,12 +4,43 @@ Cluster:
 kubectl get nodes                       -> To get node details.
 kubectl cluster-info                    -> To get cluster details. 
 
+Yaml File: 
+
+kubectl create -f file_name             -> To execute the YAML file. New first time. 
+kubectl replace -f file_name            -> To execute the YAML file. To update the created file. 
+kubectl apply -f file_name              -> To execute the YAML file. If new create else update existing.
+
 Pod: 
 
 kubectl run pod-name --image=image_name -> To run the pod. 
 kubectl get pods                        -> To get the running pods. 
-kubectl create -f file_name             -> To execute the YAML file. 
-kubectl describe pod pod_name           -> To get information about single pod. 
-kubectl 
+kubectl describe pod pod_name           -> To get information about single pod like no of containers. 
+kubectl get pod -o wide                 -> To get more information like node details of the pod. 
+kubectl get pod                         -> In READY, shows the no of containers. 
+kubectl delete pod pod_name             -> To delete the pod. 
+kubectl set image type name container_name=image_name   -> To update the image in pod. Type is pod.  
+kubectl edit pod pod_name               -> To edit pod properties.
 
-            
+Replicaset: 
+
+kubectl scale --replicas=4  type/name   -> type is replicaset, name is replica_name. 
+kubectl get replicaset                  -> To get replicaset. 
+kubectl get rs                          -> To get replicaset. 
+kubectl delete replicaset replicaset_name   -> To delete the replicaset. 
+kubectl get rs -o wide               -> To give additional info like image used, container, selector. 
+kubectl scale replicaset replica_name --replicas=5      -> To update the replcias. 
+
+kubectl set image replicaset replica_name container_name=new_image_name  -> To update image in replicaset. 
+Note: While update image, requires to delete the old pod then only create new pod with new image. 
+
+
+
+
+
+
+
+
+
+
+
+
