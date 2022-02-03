@@ -2,7 +2,8 @@ POD:
 
     IMAGEPULLBACKOFF: 
             Error occurs when image is not available. STATE will be in WAITING status. 
-             
+    
+     
 
 
 

@@ -1,16 +1,17 @@
 
-Cluster: 
+CLUSTER: 
 
 kubectl get nodes                       -> To get node details.
 kubectl cluster-info                    -> To get cluster details. 
+kubectl get all                         -> To get the all resource details. 
 
-Yaml File: 
+YAML FILE: 
 
 kubectl create -f file_name             -> To execute the YAML file. New first time. 
 kubectl replace -f file_name            -> To execute the YAML file. To update the created file. 
 kubectl apply -f file_name              -> To execute the YAML file. If new create else update existing.
 
-Pod: 
+POD: 
 
 kubectl run pod-name --image=image_name -> To run the pod. 
 kubectl get pods                        -> To get the running pods. 
@@ -21,7 +22,7 @@ kubectl delete pod pod_name             -> To delete the pod.
 kubectl set image type name container_name=image_name   -> To update the image in pod. Type is pod.  
 kubectl edit pod pod_name               -> To edit pod properties.
 
-Replicaset: 
+REPLICASET: 
 
 kubectl scale --replicas=4  type/name   -> type is replicaset, name is replica_name. 
 kubectl get replicaset                  -> To get replicaset. 
@@ -33,7 +34,17 @@ kubectl scale replicaset replica_name --replicas=5      -> To update the replcia
 kubectl set image replicaset replica_name container_name=new_image_name  -> To update image in replicaset. 
 Note: While update image, requires to delete the old pod then only create new pod with new image. 
 
+DEPLOYMENT: 
 
+kubectl create -f deployment.yaml       -> To create the deployment from yaml file. 
+kubectl get deployment                  -> To get the deployment details. 
+kubectl get replicaset                  -> To get the underlying replicaset. 
+kubectl get pods                        -> To get the underlying pods. 
+kubectl create deploy deploy_name --image=image_name --replicas=3   -> To create deploy imperatively. 
+kubectl delete deploy deploy_name       -> To delete the deployment. 
+
+kubectl rollout history 
+kubectl rollout 
 
 
 

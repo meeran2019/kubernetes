@@ -74,7 +74,14 @@ REPLICASETS:
 
 --------------------------------------------------------------------------------------------------------
 
-LABELS AND SELECTORS:     
+DEPLOYMENTS:     
+
+    It helps to deploy the applications and upgrade using rolling update etc. 
+    Underlying uses replicaset. 
+    It helps with rollout. 
+    Yaml file is same as replicaset i.e) only kind will be changed. 
+    Containers -> Pods -> Replicaset -> Deployment. 
+
 
 
 
