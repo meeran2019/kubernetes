@@ -1,6 +1,8 @@
 POD: 
 
-    State - Waiting - ImagePullBackOff error - when docker image is not available. 
+    IMAGEPULLBACKOFF: 
+            Error occurs when image is not available. STATE will be in WAITING status. 
+             
 
 
 
