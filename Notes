@@ -224,6 +224,8 @@ SERVICE ACCOUNT:
 
     automountServiceAccountToken: false   -> To disable the service account token mount. 
 
+    Using RBAC role binding, linked the service account with role. 
+
 -------------------------------------------------------------------------------------------------------- 
 
 
