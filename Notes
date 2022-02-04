@@ -129,3 +129,10 @@ COMMANDS AND ARGUMENT IN DOCKER:
     ENTRYPOINT  <-> CMD 
     
 --------------------------------------------------------------------------------------------------------    
+ENVIRONMENT VARIABLES: 
+
+    Can set the environment variable using env property. 
+    It is array/list consists of name/value pair for plain text. name/valuefrom pair for configmap or secrets. 
+
+--------------------------------------------------------------------------------------------------------     
+
