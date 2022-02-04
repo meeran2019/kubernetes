@@ -1,0 +1,15 @@
+
+# This is to pass the whole configmap to the pod. Here used envFrom and configMapref. 
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: configmap-pod-full
+spec:
+  containers:
+    - name: nginx 
+      image: nginx 
+      envFrom:
+      - configMapRef:
+          name: configtest
+

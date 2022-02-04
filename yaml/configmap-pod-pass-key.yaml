@@ -1,0 +1,23 @@
+
+# This is used to pass the configmap key alone. Used valueFrom & configMapKeyref property. 
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: configmap-pod-pass-key
+spec:
+  containers:
+    - name: demo
+      image: nginx 
+      command: ["sleep", "3600"]
+      env:
+        # Define the environment variable
+        - name: PLAYER_INITIAL_LIVES # Notice that the case is different here
+                                     # from the key name in the ConfigMap.
+          valueFrom:
+            configMapKeyRef:
+              name: game-demo           # The ConfigMap this value comes from.
+              key: player_initial_lives # The key to fetch.
+
+            
+          
