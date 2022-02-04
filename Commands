@@ -100,3 +100,14 @@ FORMATTING OUTPUT:
     -o name     -> Print only resource name. 
 
 --------------------------------------------------------------------------------------------------------
+
+CONFIGMAP:
+
+    kubectl create configmap config_name --from-file=file_name --from-literal=key1=value1 --from-literal=key2=value2                  -> To create the configmap from literal or file. 
+    kubectl get configmap                       -> To get the list of confimap. 
+
+--------------------------------------------------------------------------------------------------------
+
+
+
+

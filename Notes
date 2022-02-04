@@ -134,5 +134,19 @@ ENVIRONMENT VARIABLES:
     Can set the environment variable using env property. 
     It is array/list consists of name/value pair for plain text. name/valuefrom pair for configmap or secrets. 
 
---------------------------------------------------------------------------------------------------------     
+-------------------------------------------------------------------------------------------------------- 
+
+CONFIGMAPS: 
+
+    In environment variable, hard code the value in pod. If any changes in value, require to update all pods. 
+
+    Configmaps helps to store the name and value pair separately and refer in the pod. 
+
+    It consists of: 
+        Create the configmap using imperative and declarative way. 
+        Inject the configmap to pod. 
+
+    In Pod, it can be referred by using full configmap or specific key value from configmap. 
+
+-------------------------------------------------------------------------------------------------------- 
 
