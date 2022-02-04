@@ -12,6 +12,7 @@ YAML FILE:
 kubectl create -f file_name             -> To execute the YAML file. New first time. 
 kubectl replace -f file_name            -> To execute the YAML file. To update the created file. 
 kubectl apply -f file_name              -> To execute the YAML file. If new create else update existing.
+kubectl delete -f file_name             -> To execute the YAML file. Delete the resources in file.
 
 --------------------------------------------------------------------------------------------------------
 

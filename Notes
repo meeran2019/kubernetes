@@ -102,3 +102,30 @@ NAMESPACES:
     ResourceQuota object used to assign resoure to namespaces in yaml format. 
 
 --------------------------------------------------------------------------------------------------------
+
+COMMANDS AND ENTRYPOINT IN DOCKER: 
+
+    Containers are meant to run specific task and container exists once process completed. 
+
+    CMD sleep 5   or CMD ["sleep","5"]
+
+    docker run ubuntu sleep 10      -> To override the command. 
+
+    Command     -> CLI input is overridden. 
+    Entrypoint  -> CLI input is appended. 
+
+    Both entrypoint and command used, so it takes as entrypoint + command 
+
+    ENTRYPOINT ["sleep"]
+    CMD ["5"]   -> This will take as sleep 5. 
+
+--------------------------------------------------------------------------------------------------------
+
+COMMANDS AND ARGUMENT IN DOCKER: 
+
+    It act same as docker except change in name. 
+
+    CMD         <-> ARGS  
+    ENTRYPOINT  <-> CMD 
+    
+--------------------------------------------------------------------------------------------------------    
