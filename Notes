@@ -150,3 +150,29 @@ CONFIGMAPS:
 
 -------------------------------------------------------------------------------------------------------- 
 
+SECRETS: 
+
+    It is used to store the sensitive data. 
+
+    It consists of: 
+        Create the secret 
+        Inject the secret to pod. 
+    
+    It can be create by imperative or declarative way. 
+
+    Data value should be encoded format.
+
+    echo -n 'value' | base64            -> To convert the value to base64 encoded. 
+
+    echo -n 'value' | base64 --decode   -> To decode to plain text. 
+
+    It refer in pod by 3 ways: 
+        1. As envFrom   -> To pass the whole secret and secretRef to refer. 
+        2. As env       -> To pass the specific key using valueFrom and secretKeyRef. 
+        3. As volume    -> To mount the secrets as volume using volumes and secrets. 
+
+-------------------------------------------------------------------------------------------------------- 
+
+
+
+

@@ -108,6 +108,12 @@ CONFIGMAP:
 
 --------------------------------------------------------------------------------------------------------
 
+SECRETS: 
 
+    kubectl create secret generic secret_name --type string --from-file=file_name --from-literal=key=value               -> To create the secret. 
+    kubectl get secrets                    -> To get the list of secrets.  
+    kubectl describe secret secret_name    -> To get the secret details. Values in encoded.   
+    kubectl get secret secret_name -o yaml -> To display values in encoded text. 
+    
 
 
