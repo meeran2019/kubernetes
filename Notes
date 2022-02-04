@@ -199,6 +199,18 @@ SECURITY CONTEXT:
 
 -------------------------------------------------------------------------------------------------------- 
 
+RESOURCE REQUIREMENTS: 
+
+        CPU, Memory, Disk 
+        Resources Request    - It is soft limit. 
+        Resources Limit      - It is hard limit. 
+
+        It is applied at each container level. 
+
+        For CPU, it throttles after limit. For memory, can use more memory than limit and can be terminated. 
+
+-------------------------------------------------------------------------------------------------------- 
+
 
 
 
