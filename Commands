@@ -117,5 +117,12 @@ SECRETS:
     
 --------------------------------------------------------------------------------------------------------
 
+SERVICE ACCOUNT: 
+
+    kubectl create serviceaccount service_account_name      -> To create the service account. 
+    kubectl get serviceaccount                              -> To get the service account.
+    kubectl describe serviceaccount name                    -> To get more information. 
+
+--------------------------------------------------------------------------------------------------------
 
 

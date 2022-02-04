@@ -211,6 +211,22 @@ RESOURCE REQUIREMENTS:
 
 -------------------------------------------------------------------------------------------------------- 
 
+SERVICE ACCOUNT: 
+
+    Account types: 
+        User account    - use by any humans like admin, developer. 
+        Service account - use by machine like application (jenkins, prometheus) uses service account. 
+
+    While create service account, it automatically generate the token. External application uses this token. Token is stored as secret object. 
+
+    Token is taken from secret and used by external applications. 
+    For native kubernetes application, just mount the token secret volume. 
+
+    automountServiceAccountToken: false   -> To disable the service account token mount. 
+
+-------------------------------------------------------------------------------------------------------- 
+
+
 
 
 
