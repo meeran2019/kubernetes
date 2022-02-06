@@ -263,6 +263,21 @@ NODE SELECTOR:
     First requires to label the nodes and use the nodeSelector in pod to select the node. 
     Useful for simple problem just to select based on the labels. 
 
+-------------------------------------------------------------------------------------------------------- 
+
+NODE AFFINITY: 
+
+    It provides advanced capability to place nodes. 
+    It consists of affinity and nodeaffinity. 
+
+    required During Scheduling Ignored During Execution. 
+    required/ignored/preferred  - it checks whether required or preferred or ignored.         
+    Scheduling/execution        - it checks during scheduling or execution. 
+
+-------------------------------------------------------------------------------------------------------- 
+
+
+
 
 
 
