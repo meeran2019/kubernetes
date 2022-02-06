@@ -101,6 +101,9 @@ NAMESPACES:
     Namespace object used to create namespace in yaml format. 
     ResourceQuota object used to assign resoure to namespaces in yaml format. 
 
+
+--------------------------------------------------------------------------------------------------------
+CONFIGURATIONS
 --------------------------------------------------------------------------------------------------------
 
 COMMANDS AND ENTRYPOINT IN DOCKER: 
@@ -274,7 +277,9 @@ NODE AFFINITY:
     required/ignored/preferred  - it checks whether required or preferred or ignored.         
     Scheduling/execution        - it checks during scheduling or execution. 
 
--------------------------------------------------------------------------------------------------------- 
+--------------------------------------------------------------------------------------------------------
+MULTI CONTAINER PODS
+--------------------------------------------------------------------------------------------------------
 
 
 
