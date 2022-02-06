@@ -317,7 +317,19 @@ READINESS PROBE:
     
 --------------------------------------------------------------------------------------------------------    
 
+LIVENESS PROBE: 
 
+    It is health check which periodically checks whether application is healthy. 
+
+    It consists of: 
+        HTTP test       - checks the http path. 
+        TCP test        - checks the tcp port.
+        EXEC command    - checks the command. 
+    
+    Liveness probe is health check.
+    Readiness probe is to check whether container is ready to serve traffic. 
+
+--------------------------------------------------------------------------------------------------------    
 
 
 

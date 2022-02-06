@@ -60,5 +60,21 @@ POD:
 
 --------------------------------------------------------------------------------------------------------
 
+    CRASH LOOP BACKOFF / Ready is FALSE : 
+      When liveness probe is failed, then status become crashloopbackoff error. 
+
+    NAME                      READY   STATUS             RESTARTS   AGE
+    liveness-probe-http       0/1     CrashLoopBackOff   4          2m
+
+    Conditions:
+      Type              Status
+      Initialized       True 
+      Ready             False 
+      ContainersReady   False 
+      PodScheduled      True 
+
+--------------------------------------------------------------------------------------------------------
+
+
 
 
