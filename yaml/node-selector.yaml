@@ -1,0 +1,16 @@
+
+# This is using labels to select the node.
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: node-selector 
+  labels:
+    env: dev 
+spec:
+  containers:
+  - name: node-selector-pod 
+    image: nginx
+    imagePullPolicy: IfNotPresent
+  nodeSelector:
+    env: dev

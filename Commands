@@ -134,4 +134,7 @@ TAINTS AND TOLERATIONS:
 
 --------------------------------------------------------------------------------------------------------
 
+NODE SELECTOR: 
 
+    Kubectl label node node-name key=value                  -> To label the nodes. 
+    
