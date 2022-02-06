@@ -250,6 +250,18 @@ TAINTS AND TOLERATIONS:
 
 -------------------------------------------------------------------------------------------------------- 
 
+NODE NAME: 
+
+    It is simplest method to directly select the node name. 
+    It is hard coding the node name to schedule the pod. 
+
+-------------------------------------------------------------------------------------------------------- 
+
+NODE SELECTOR: 
+
+    It helps to select the node based on the labels. 
+    First requires to label the nodes and use the nodeSelector in pod to select the node. 
+    Useful for simple problem just to select based on the labels. 
 
 
 

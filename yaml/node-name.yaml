@@ -1,0 +1,12 @@
+
+# This is example of assigning node to the pod directl. Hardcoding the name. 
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: node-name
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+  nodeName: ip-1.us-west-2.compute.internal
