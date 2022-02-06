@@ -27,4 +27,14 @@ POD:
         Exit Code:    1
 
 
+    PENDING Status: 
+      When pod is created, if not placed in any node, then it will be in pending status. 
+      It can be due to taint and tolerations or node is down. 
+
+      NAME       READY   STATUS    RESTARTS   AGE
+      mosquito   0/1     Pending   0          4s
+
+      
+
+
 

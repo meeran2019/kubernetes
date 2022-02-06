@@ -228,15 +228,28 @@ SERVICE ACCOUNT:
 
 -------------------------------------------------------------------------------------------------------- 
 
+TAINTS AND TOLERATIONS: 
 
+    Taint applied on Nodes. 
+    Tolerations applied on Pods. 
+    If Tolerations, can withstand Taint, then allow to run the pod on specific nodes. 
 
+    It doesnot tell to go the pod to specific nodes. It just restrict nodes from specific pod. 
 
+    kubectl taint node node-name key=value:TaintEffect   -> Taint 
+    kubectl taint node node-name key=value:TaintEffect-  -> UnTaint 
 
+    Taint Effects: 
+        NoSchedule          - Guarantee not to place and existing wont impact. 
+        PreferNoSchedule    - No guarantee. Existing wont impact. 
+        NoExecute           - New pods will not be scheduled and existing pods are evicted (killed).
 
+    In POD, add Tolerations property. 
 
-
+    Master node has taints only for kube system (control plane). 
 
 -------------------------------------------------------------------------------------------------------- 
+
 
 
 

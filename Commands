@@ -125,4 +125,13 @@ SERVICE ACCOUNT:
 
 --------------------------------------------------------------------------------------------------------
 
+TAINTS AND TOLERATIONS: 
+
+    kubectl taint nodes node-name key=value:taint-effect    -> To create the taint on nodes. 
+    kubectl get nodes 
+    kubectl describe node node01 | grep Taint               -> To check Taint available or not. 
+    kubectl taint node node-name key=value:effect-          -> To untaint. 
+
+--------------------------------------------------------------------------------------------------------
+
 

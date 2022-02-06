@@ -1,0 +1,24 @@
+
+# This is to create tolerations in POD
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: taints-and-toleration-pod
+  labels:
+    env: test
+spec:
+  containers:
+  - name: toleration-exists
+    image: nginx
+  tolerations:
+  - key: "example-key"
+    operator: "Exists"
+    effect: "NoSchedule"
+  - name: toleration-value 
+    image: nginx
+  tolerations:
+  - key: "key1"
+    operator: "Equal"
+    value: "value1"
+    effect: "NoSchedule"
