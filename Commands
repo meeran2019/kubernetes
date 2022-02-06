@@ -138,3 +138,9 @@ NODE SELECTOR:
 
     Kubectl label node node-name key=value                  -> To label the nodes. 
     
+--------------------------------------------------------------------------------------------------------
+
+MULTI CONTAINER POD:
+
+    kubectl logs name -n=namespace=name                     -> To get the log details. 
+    

@@ -281,6 +281,21 @@ NODE AFFINITY:
 MULTI CONTAINER PODS
 --------------------------------------------------------------------------------------------------------
 
+    Multi container pod created and destroyed together. Shares same netork and storage. 
+
+    Types of Design Pattern: 
+        Ambassador: 
+            Used for processing and data conversion. 
+        Adaptor: 
+            Used for plugin. To connect to database. 
+        Sidecar: 
+            Used for logging. Install logging agent as sidecar container. 
+
+--------------------------------------------------------------------------------------------------------
+OBSERVABILITY
+--------------------------------------------------------------------------------------------------------
+
+
 
 
 
