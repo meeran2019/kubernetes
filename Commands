@@ -146,4 +146,17 @@ MULTI CONTAINER POD:
 
 --------------------------------------------------------------------------------------------------------
 
+LOGGING: 
 
+        docker logs container-id    -> To check logs in docker. 
+        kubectl logs -f pod-name    -> To get the logs of pod. 
+        kubectl logs -f pod-name container-name     -> To get the logs of container. 
+
+--------------------------------------------------------------------------------------------------------
+
+MONITORING: 
+
+    kubectl top node        -> To get the memory and cpu of node.   
+    kubectl top pod         -> To get the memory and cpu of pod. 
+
+--------------------------------------------------------------------------------------------------------

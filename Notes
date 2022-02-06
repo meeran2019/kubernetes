@@ -1,4 +1,3 @@
-
 --------------------------------------------------------------------------------------------------------
 ARCHITECTURE:
 --------------------------------------------------------------------------------------------------------
@@ -331,5 +330,20 @@ LIVENESS PROBE:
 
 --------------------------------------------------------------------------------------------------------    
 
+LOGGING: 
 
+        docker logs container-id    -> To check logs in docker. 
+        kubectl logs -f pod-name    -> To get the logs of pod. 
+        kubectl logs -f pod-name container-name     -> To get the logs of container. 
 
+--------------------------------------------------------------------------------------------------------
+
+MONITORING: 
+
+    It helps to know the cpu and memory usage of pod and nodes. Metrics server is used to get the real time metrics. 
+    under the hood, uses cAdvisor to ge the metrics details which pass thorugh kubelet. 
+
+    kubectl top node 
+    kubectl top pod 
+
+--------------------------------------------------------------------------------------------------------
