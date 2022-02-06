@@ -4,6 +4,7 @@ POD:
     IMAGE PULLBACK OFF: 
         Error occurs when image is not available. STATE will be in WAITING status. 
 
+--------------------------------------------------------------------------------------------------------
 
     START ERROR: 
         when command is failed. 
@@ -16,6 +17,7 @@ POD:
           Reason:       StartError
           Message:      failed to create containerd task: failed to create shim: OCI runtime create failed: container_linux.go:380: starting container process caused: exec: "--color=green": executable file not found in $PATH: unknown
 
+--------------------------------------------------------------------------------------------------------
 
     CRASH LOOPBACK OFF / OOM Killed: 
         Pod failed to create due to OOM (Out of memory)
@@ -26,6 +28,7 @@ POD:
         Reason:       OOMKilled
         Exit Code:    1
 
+--------------------------------------------------------------------------------------------------------
 
     PENDING Status: 
       When pod is created, if not placed in any node, then it will be in pending status. 
@@ -34,7 +37,28 @@ POD:
       NAME       READY   STATUS    RESTARTS   AGE
       mosquito   0/1     Pending   0          4s
 
-      
+--------------------------------------------------------------------------------------------------------
+
+    POD CONDITION - READY - FAILED: 
+      When ready status is false, traffic is not served. COuld be due to readiness probe is failed. 
+
+      Conditions:
+        Type              Status
+        Initialized       True 
+        Ready             False 
+        ContainersReady   False 
+        PodScheduled      True 
+
+    Events:
+      Type     Reason     Age               From               Message
+      ----     ------     ----              ----               -------
+      Normal   Scheduled  45s               default-scheduler  Successfully assigned default/readiness-probe-exec to ip-172-31-13-199.us-west-2.compute.internal
+      Normal   Pulled     44s               kubelet            Container image "nginx:1.14.2" already present on machine
+      Normal   Created    44s               kubelet            Created container nginx-container
+      Normal   Started    44s               kubelet            Started container nginx-container
+      Warning  Unhealthy  5s (x7 over 35s)  kubelet            Readiness probe failed: cat: /tmp/healthy: No such file or directory
+
+--------------------------------------------------------------------------------------------------------
 
 
 

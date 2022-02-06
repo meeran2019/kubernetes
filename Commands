@@ -143,4 +143,7 @@ NODE SELECTOR:
 MULTI CONTAINER POD:
 
     kubectl logs name -n=namespace=name                     -> To get the log details. 
-    
+
+--------------------------------------------------------------------------------------------------------
+
+

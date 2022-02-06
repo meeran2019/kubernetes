@@ -281,7 +281,7 @@ NODE AFFINITY:
 MULTI CONTAINER PODS
 --------------------------------------------------------------------------------------------------------
 
-    Multi container pod created and destroyed together. Shares same netork and storage. 
+    Multi container pod created and destroyed together. Shares same network and storage. 
 
     Types of Design Pattern: 
         Ambassador: 
@@ -295,8 +295,27 @@ MULTI CONTAINER PODS
 OBSERVABILITY
 --------------------------------------------------------------------------------------------------------
 
+READINESS PROBE: 
 
+    It helps to make kubernetes to know that pod is ready to serve user traffic. 
 
+    POD Status: 
+        Pending             - waiting to schedule the pod to node. 
+        Container creating  - pod is scheduled and download the image and run the container. 
+        Running             - it is running status. 
+    
+    POD Condition: 
+        Pod Scheduled 
+        Initialized 
+        Container Ready 
+        Ready               - once ready true, then only allow user traffic. 
+
+    It can be done by: 
+        HTTP test   - ping the path 
+        TCP test    - ping port 
+        EXEC test   - custom script. 
+    
+--------------------------------------------------------------------------------------------------------    
 
 
 
