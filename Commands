@@ -160,3 +160,13 @@ MONITORING:
     kubectl top pod         -> To get the memory and cpu of pod. 
 
 --------------------------------------------------------------------------------------------------------
+
+LABELS, SELECTORS & ANNOTATIONS: 
+
+    kubectl label pod pod-name key=value        -> To assign a label to pod. 
+    kubectl get pods --selector key=value       -> To select the pod by using selector. 
+    kubectl get all --selector key=value        -> To filter for all resources. 
+    kubectl get pod --selector=key1=value1,key2=value2  -> To filter multiple labels. 
+
+--------------------------------------------------------------------------------------------------------
+

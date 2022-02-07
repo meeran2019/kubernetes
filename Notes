@@ -347,3 +347,14 @@ MONITORING:
     kubectl top pod 
 
 --------------------------------------------------------------------------------------------------------
+POD DESIGN: 
+--------------------------------------------------------------------------------------------------------
+
+LABELS, SELECTORS & ANNOTATIONS: 
+
+    Labels helps to group things (ex: environment by dev, test or prod)
+    Selectors helps to select based on the labels. 
+
+    Annotation is used to record any information that will be useful. 
+
+--------------------------------------------------------------------------------------------------------    
