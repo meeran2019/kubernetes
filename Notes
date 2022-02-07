@@ -358,3 +358,22 @@ LABELS, SELECTORS & ANNOTATIONS:
     Annotation is used to record any information that will be useful. 
 
 --------------------------------------------------------------------------------------------------------    
+ROLLING UPDATES & ROLLBACKS: 
+
+    Deployment Strategy: 
+        Rolling Update   - Install in few pods and no downtime. This is default strategy. 
+        Recreate         - Have downtime and old versions are removed completely first and then install new version. 
+
+    Based on Rolling update strategy - 25% max can be down and 25% max extra can take. 
+
+        Selector:               app=nginx
+        Replicas:               3 desired | 3 updated | 3 total | 3 available | 0 unavailable
+        StrategyType:           RollingUpdate
+        MinReadySeconds:        0
+        RollingUpdateStrategy:  25% max unavailable, 25% max surge
+        Pod Template:
+        
+-------------------------------------------------------------------------------------------------------- 
+
+
+

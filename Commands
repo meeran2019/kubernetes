@@ -170,3 +170,19 @@ LABELS, SELECTORS & ANNOTATIONS:
 
 --------------------------------------------------------------------------------------------------------
 
+ROLLOUT: 
+
+    kubectl rollout history deploy deploy-name      -> To check the rollout history. 
+    kubectl rollout status deploy deploy-name       -> To show the status of rollout. 
+    kubectl rollout undo deploy deploy-name         -> To rollback to previous version. 
+    kubectl rollout undo deploy deploy-name --to-revision=2     -> To rollback to specific version. 
+    kubectl rollout history deploy deploy-name --revison=2      -> To get specific revision details.
+
+    --record - helps to record the change cause. 
+
+    kubectl set image deploy deploy-name container-name=image   -> To update image to container.
+    
+--------------------------------------------------------------------------------------------------------
+
+
+
