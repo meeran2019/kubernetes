@@ -375,5 +375,27 @@ ROLLING UPDATES & ROLLBACKS:
         
 -------------------------------------------------------------------------------------------------------- 
 
+JOBS: 
+
+    It helps to run the specific set of pod. 
+    Job creates one or more pod and retry execution until specified number of them completed successfully.
+    When specified number is reached, job is completed. 
+    Note: RestartPolicy is Never. 
+
+-------------------------------------------------------------------------------------------------------- 
+
+CRON JOBS: 
+
+    Job can be scheduled using CRON expression. 
+
+    kubectl get cronjob             -> To get the cron job. 
+
+    NAME    SCHEDULE      SUSPEND   ACTIVE   LAST SCHEDULE   AGE
+    hello   30 21 * * *   False     0        <none>          17s
+
+-------------------------------------------------------------------------------------------------------- 
+
+
+
 
 

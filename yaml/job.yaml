@@ -1,0 +1,24 @@
+
+# This is example of job. 
+# Restart Policy should be Never.
+# backoffLimit is no of retries before failure. 
+# parallelism is no of pod to run in parallel.
+# completions is no of pod required to mark job as completed. 
+
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job
+spec:
+  parallelism: 1
+  completions: 5
+  template:
+    spec:
+      containers:
+      - name: pi
+        image: per
+        command: ["perl",  "-Mbignum=bpi", "-wle", "print bpi(2000)"]
+      restartPolicy: Never
+  backoffLimit: 4         
+
