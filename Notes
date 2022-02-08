@@ -419,6 +419,9 @@ SERVICES:
                 Port is mandatory. Default takes target port as port. For node port, takes default in the range of 30000 to 32767. 
 
         LoadBalancer - It supports in cloud.
+                Under the hood create the node port. 
+
+        https://www.densify.com/kubernetes-autoscaling/kubernetes-service-load-balancer
 
 --------------------------------------------------------------------------------------------------------
 
@@ -450,6 +453,33 @@ NETWORK POLICIES:
 
             podSelector: 
 
+
+--------------------------------------------------------------------------------------------------------
+
+INGRESS: 
+
+    An API object that manages external access to the services. 
+    It supports HTTPS security and path based load balancing and name based virtual hosting. 
+    Ingress is service which performs nodeport or load balancing. 
+
+    It exposes HTTP/HTTPS routes from outside the cluster to services within cluster. 
+
+    It contains ROUTING RULE.
+
+    It consists of: 
+        Ingress controller: 
+                Not enabled by default. 
+                Can be deployed by using GCE, nginx, contour, haproxy, istio etc. 
+
+        Ingress resources: 
+                It is created by using kind object. 
+    
+    Rule is based on domain/hosts and paths. 
+    
+    
+    ip-address:port (using dns host) -> website-name:port (using proxy, changes from default port to required port) -> website address 
+
+--------------------------------------------------------------------------------------------------------
 
 
 

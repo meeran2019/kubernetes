@@ -1,0 +1,14 @@
+
+# Since already aws cli is installed, kubernetes using that to intqeract with aws to create loadbalancer.
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-loadbalance
+spec:
+  selector:
+    app: example
+  ports:
+    - port: 8765
+      targetPort: 9376
+  type: LoadBalancer
