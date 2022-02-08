@@ -200,5 +200,10 @@ NETWORK POLICIES:
     kubectl get networkpolicy 
     kubectl describe netpol name 
     
+--------------------------------------------------------------------------------------------------------
 
+INGRESS: 
+
+    kubectl create ingress ingress-name --rule="host/path=service-name:port"    -> To create the ingress.
+    
 
