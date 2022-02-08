@@ -184,5 +184,18 @@ ROLLOUT:
     
 --------------------------------------------------------------------------------------------------------
 
+SERVICES: 
+
+    kubectl create service nodeport name --node-port=30011 --tcp=port:target-port   -> To create the node port.
+    kubectl create service clusterip name --tcp=port:target-port                    -> To create clusterip.
+    kubectl get service service-name                -> To get the services list. 
+    kubectl describe service service-name           -> To get the services information. 
+    kubectl delete service service-name             -> To delete the service. 
+
+--------------------------------------------------------------------------------------------------------
+
+NETWORK POLICIES: 
+
+
 
 

@@ -393,7 +393,46 @@ CRON JOBS:
     NAME    SCHEDULE      SUSPEND   ACTIVE   LAST SCHEDULE   AGE
     hello   30 21 * * *   False     0        <none>          17s
 
--------------------------------------------------------------------------------------------------------- 
+--------------------------------------------------------------------------------------------------------
+SERVICES AND NETWORKING: 
+--------------------------------------------------------------------------------------------------------
+
+SERVICES: 
+
+    It enables communication within and outside applications/pods. 
+    Enables front end application available to end user. 
+    Backend application available to frontend application. 
+    
+    Based on selector, can support multiple pods and load balancing taken care by kubernetes. 
+    If no of nodes increased, it will apply to all nodes. 
+
+    Selector is used to link pod to service. 
+
+    It consists of: 
+        ClusterIP   - For internal communication (Ex: App to connect to database). 
+                Request forwarded to service and service load balances the pod. 
+                If pod is down, it doesnot affect as service group pod based on selector. 
+                This is default service. 
+
+        NodePort    - For external communication (Ex: User to connect to App).
+                Target port (pod), Port (service), Node port (30000-32767 port range).
+                Port is mandatory. Default takes target port as port. For node port, takes default in the range of 30000 to 32767. 
+
+        LoadBalancer - It supports in cloud.
+
+--------------------------------------------------------------------------------------------------------
+
+NETWORK POLICIES: 
+
+    
+
+
+
+
+
+
+
+
 
 
 
