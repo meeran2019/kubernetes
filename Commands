@@ -196,6 +196,9 @@ SERVICES:
 
 NETWORK POLICIES: 
 
-
+    kubectl get netpol 
+    kubectl get networkpolicy 
+    kubectl describe netpol name 
+    
 
 

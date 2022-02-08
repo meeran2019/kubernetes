@@ -424,7 +424,33 @@ SERVICES:
 
 NETWORK POLICIES: 
 
-    
+    By Default, POD communicate with other POD & Services with in cluster. 
+    Flannel doesnot support network policy. Calico, weave-net kube-router support network policy. 
+
+    It consists of: 
+        Ingress/Egress rule     -> Allow incoming or outgoing. 
+        Ports                   -> On which port. 
+        From/To Pods            -> From/To pod. 
+
+    NOTE: 
+
+    Here, after from, consists of array/list of selectors, this is consider as "OR". 
+
+        ingress:
+        - from: 
+        - namespaceSelector: 
+
+        - podSelector: 
+
+    Here, after from single array/list of selector, this is consider as "AND"
+
+        ingress:
+        - from: 
+        - namespaceSelector: 
+
+            podSelector: 
+
+
 
 
 
