@@ -8,6 +8,7 @@ metadata:
   labels:
     type: local
 spec:
+  persistentVolumeReclaimPolicy: Delete
   capacity:
     storage: 1Gi
   accessModes:

@@ -538,9 +538,9 @@ PERSISTENT VOLUMES:
         Read Write Many 
     
     Reclaim Policy: 
-        Retain 
-        Delete 
-        Recycle 
+        Retain  -   PV is not deleted but not available for other. 
+        Delete  -   PV is deleted. 
+        Recycle -   PV is scrubbed. 
         
     Persistent volume claim to be created and it matches based on: 
         Sufficient capacity 
