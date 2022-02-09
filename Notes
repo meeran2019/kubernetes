@@ -482,8 +482,76 @@ INGRESS:
     --rewrite-target option
 
 --------------------------------------------------------------------------------------------------------
+STATE PERSISTENCE:
+--------------------------------------------------------------------------------------------------------
 
+DOCKER STORAGE: 
 
+    Storage drivers: 
+
+        /var/lib/docker     -> Docker stores all its data by default. 
+        It is layered architecture and can resue the layer using cache, so create image faster.
+        Image Layers - Read Only.
+        Container Layer - Read Write layer - Used to store data. Life is till container alive.
+        COPY-ON-WRITE mechanism.
+        
+        AUFS, Overlay, Overlay2, ZFS, Device Mapper - Storage Driver. 
+
+    Volume drivers:
+
+        Container data will be lost when container exists. To store the container data in host, use the volume. 
+        docker volume create volume-name    -> to create the volume. 
+        docker run -v volume-name:/var/lib/mysql image-name  -> To mount the volume. 
+        Default data store under /var/lib/docker/volumes.
+        docker run -v host-volume-path:container-path image-name  -> Bind mount, can choose other host location. 
+        It is handled by volume drivers. 
+
+    Volume Drivers Plugin: 
+
+        Local, Convoy, NetApp, Azure File Storage etc. 
+
+--------------------------------------------------------------------------------------------------------
+
+VOLUMES IN KUBERNETES: 
+
+    Volumes are created by using Volumes property.
+    It mount to container/pod using mountVolumes. 
+
+    Volume Types: 
+        hostPath    - It stores separately in single node. If multiple node, difficult to get all volumes. so can use other common storage types to store in common place. 
+        NFS
+        Clusterfs 
+        AWS, etc 
+
+    It had disadvantage of manually creating volume and mount everytime by developer in pod.
+
+--------------------------------------------------------------------------------------------------------
+
+PERSISTENT VOLUMES: 
+
+    It is pool of volume created by administrator. 
+    User use the persistent volume claim to use this persistent volume. 
+
+    Access Modes: 
+        Read Only Many 
+        Read Write Once 
+        Read Write Many 
+    
+    Reclaim Policy: 
+        Retain 
+        Delete 
+        Recycle 
+        
+    Persistent volume claim to be created and it matches based on: 
+        Sufficient capacity 
+        Access Modes 
+        Volume Modes 
+        Storage Class 
+        Selector 
+
+    One to One relationship between PV & PVC.
+
+--------------------------------------------------------------------------------------------------------
 
 
 

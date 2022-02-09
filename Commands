@@ -206,4 +206,14 @@ INGRESS:
 
     kubectl create ingress ingress-name --rule="host/path=service-name:port"    -> To create the ingress.
     
+--------------------------------------------------------------------------------------------------------
 
+VOLUMES: 
+
+    kubectl get pv      
+    kubectl get persistentvolume
+    kubectl describe pv pv-name 
+
+    kubectl get pvc 
+
+--------------------------------------------------------------------------------------------------------

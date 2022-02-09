@@ -1,0 +1,16 @@
+
+# This is uses local host to create the volume.
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: persistent-volume
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt/data"
