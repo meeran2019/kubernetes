@@ -231,4 +231,11 @@ STORAGE CLASS:
     kubectl describe sc name 
 
 --------------------------------------------------------------------------------------------------------    
+
+STATEFULSETS: 
+
+    kubectl create -f stateful.yaml 
+    kubectl scale statefulset name --replicas=2 
+    kubectl scale statefulset name --replicas=5
+    kubectl delete statefulset name 
     

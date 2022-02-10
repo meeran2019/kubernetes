@@ -568,8 +568,20 @@ STORAGE CLASS:
 
         VolumeBindingMode - WaitForFirstConsumer  - Pod to be created then PVC in bound status. 
         VolumeBindingMode - Immediate - It bound when PVC is tagged to PV. 
-        
+
 --------------------------------------------------------------------------------------------------------
+
+STATEFUL SETS: 
+
+    It is similar to deployment which creates pods based on templates. 
+    Host name (pod name) will be same for every creation. 
+    Pods run in sequence.
+    New pods will be created from index name-1,name-2 for replicas.
+    
+
+
+
+
 
 
 
