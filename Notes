@@ -451,7 +451,7 @@ NETWORK POLICIES:
         - from: 
         - namespaceSelector: 
 
-            podSelector: 
+          podSelector: 
 
 
 --------------------------------------------------------------------------------------------------------
@@ -553,7 +553,23 @@ PERSISTENT VOLUMES:
 
 --------------------------------------------------------------------------------------------------------
 
+STORAGE CLASS: 
 
+    Static Provisioning: 
+        First to create the disk and then create PV on the disk. 
+        Requires to create PV. 
+        Create Disk -> PV -> PVC -> Pod 
+        
+    Dynamic Provisioning: 
+        Here use the Storage Class. 
+        No need to create disk. 
+        Storage Class -> PVC -> Pod 
+        If no-provisioner, then doesnot support dynamic provisioning. 
+
+        VolumeBindingMode - WaitForFirstConsumer  - Pod to be created then PVC in bound status. 
+        VolumeBindingMode - Immediate - It bound when PVC is tagged to PV. 
+        
+--------------------------------------------------------------------------------------------------------
 
 
 
