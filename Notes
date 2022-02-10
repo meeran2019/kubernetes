@@ -577,7 +577,33 @@ STATEFUL SETS:
     Host name (pod name) will be same for every creation. 
     Pods run in sequence.
     New pods will be created from index name-1,name-2 for replicas.
+
+    serviceName is required for statefulset. 
+
+--------------------------------------------------------------------------------------------------------
+
+HEADLESS SERVICE: 
+
+    It is like normal service but doesnot do loadbalance or own IP addres. 
+    Headless service is just do DNS entry for POD. 
+
+    podname.headless-service-name.namespace.svc.cluster.local 
+
+    clusterIP: None 
+
+-------------------------------------------------------------------------------------------------------- 
+
+STORAGE IN STATEFULSETS: 
+
+    Generally in deployment, based on replicas , creates multiple pods. All pods use the same volume(by using, storage class, PVC).
+
+    If require to create separate volume for separate pods in statefulset, it's possible by using "volumeclaimtemplate".
+
+    VolumeClaimTemplate - It is declaring the PVC. which is used by pod to create separate PVC for each pod. 
+
     
+
+
 
 
 

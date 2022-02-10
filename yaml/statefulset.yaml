@@ -23,3 +23,12 @@ spec:
         ports:
         - containerPort: 80
           name: web
+  volumeClaimTemplates:
+  - metadata:
+      name: www
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "gp2"
+      resources:
+        requests:
+          storage: 10Mi
