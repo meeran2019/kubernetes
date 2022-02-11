@@ -653,6 +653,30 @@ AUTHENTICATION:
 
 KUBE CONFIG: 
 
+    Certificates can be used to authenticate the request by using --key, --cert, --cacert 
+    For kubectl command, kube-config file is used which contains the cluster, user, context and certificate details. 
+
+    HOME/.kube/config
+
+    Clusters: 
+        Cluster information. 
+        dev, test, prod
+        
+        Certificate authority.
+        Cluster details. 
+
+    Contexts: 
+        user@cluster.
+        developer@prod 
+
+    Users: 
+        User information. 
+        developer, admin 
+
+        client certificate 
+        client key 
+
+-------------------------------------------------------------------------------------------------------- 
 
 
 
