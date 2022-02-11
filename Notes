@@ -616,6 +616,46 @@ DEFINE, BUILD AND MODIFY CONTAINER IMAGES:
 
 -------------------------------------------------------------------------------------------------------- 
 
+AUTHENTICATION, AUTHORIZATION AND ADMISSION CONTROL: 
+
+    Securing Hosts: 
+        Password based authentication is disabled. 
+        Kay based authentication. 
+    
+    Securing Kubernetes: 
+        kube-apiserver: 
+            Authentication (who can access): 
+                Static Password Files - username & Password
+                Static Token Files - username & tokens
+                Certificates 
+                External authentication provider - LDAP
+                service accounts (for machines)
+
+            Authorization (what they do)
+                RBAC - Role based access control. 
+                ABAC - Attribute based access control. 
+                Node Authorization
+                Web hook 
+            
+            TLS Certificates. 
+
+            Network Policy (ingress & egress)
+
+-------------------------------------------------------------------------------------------------------- 
+
+AUTHENTICATION: 
+
+    Kubernetes does not manage users. Cannot create users and view. 
+    Service account can be created or managed.
+    All access is managed by kube-apiserver which authenticates. 
+
+-------------------------------------------------------------------------------------------------------- 
+
+KUBE CONFIG: 
+
+
+
+
 
 
 
