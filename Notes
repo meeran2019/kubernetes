@@ -576,7 +576,7 @@ STATEFUL SETS:
     It is similar to deployment which creates pods based on templates. 
     Host name (pod name) will be same for every creation. 
     Pods run in sequence.
-    New pods will be created from index name-1,name-2 for replicas.
+    New pods will be created from index name-0,name-1 for replicas.
 
     serviceName is required for statefulset. 
 
@@ -601,7 +601,24 @@ STORAGE IN STATEFULSETS:
 
     VolumeClaimTemplate - It is declaring the PVC. which is used by pod to create separate PVC for each pod. 
 
-    
+-------------------------------------------------------------------------------------------------------- 
+
+DEFINE, BUILD AND MODIFY CONTAINER IMAGES: 
+
+    docker build -t tag -f docker-file 
+    docker build -t tag Dockerfile
+
+    Layers are cached and resued if rebuild. 
+
+    From OS or other image. 
+    ADD  copy from link to destination. TAR file is extracted and copied automatically. 
+    COPY copy from local source to image destination. 
+
+-------------------------------------------------------------------------------------------------------- 
+
+
+
+
 
 
 

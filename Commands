@@ -240,3 +240,13 @@ STATEFULSETS:
     kubectl delete statefulset name 
 
 --------------------------------------------------------------------------------------------------------        
+
+DEFINE, BUILD AND MODIFY CONTAINER IMAGES: 
+
+    docker image ls                             -> To list the images. 
+    docker build -t tag-name .                  -> Dockerfile should be maintained.
+    docker build -t tage-name -f file-name .    -> To create with other Dockerfile name.
+    docker run -p host-port:container-port image -> To run the docker container. 
+    docker run image-name commands              -> To execute the command in container. 
+
+--------------------------------------------------------------------------------------------------------        
