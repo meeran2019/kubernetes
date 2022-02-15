@@ -288,5 +288,15 @@ ROLE BASED ACCESS CONTROL (RBAC):
 
 -------------------------------------------------------------------------------------------------------- 
 
+CLUSTER ROLE & CLUSTER ROLE BINDING: 
+
+    kubectl get clusterrole | wc -l     -> To get the lines count. 
+
+    kubectl create clusterrole role-name --verb=* resource=nodes    -> To create the clusterrole. 
+
+    kubectl create clusterrolebinding --clusterrole=role-name --user=name --group=name -> To create the cluster role binding. 
+
+-------------------------------------------------------------------------------------------------------- 
+    
 
 

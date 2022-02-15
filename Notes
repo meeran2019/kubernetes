@@ -748,6 +748,20 @@ ROLE BASED ACCESS CONTROL (RBAC):
 
 -------------------------------------------------------------------------------------------------------- 
 
+CLUSTER ROLES & CLUSTER ROLEBINDING: 
+
+    Roles & Rolesbindings are specific to NAMESPACES. 
+    Cluster role & Cluster rolebinding are specific to CLUSTER wide (NO Namespace).
+
+    Namespaced Resources: Deployment, Pods, secrets, roles, rolebinding etc. 
+    Cluster Resources: Nodes, Persistent volume, PVC, Clusterrole, cluster rolebinding, certificate signing request etc. 
+
+    kubectl api-resources --namespaced=true     -> To get the namespaced resources. 
+
+    clusterrole can be created for role also, it applies to all namespace.
+
+-------------------------------------------------------------------------------------------------------- 
+
 
 
 
