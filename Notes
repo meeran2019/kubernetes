@@ -678,6 +678,78 @@ KUBE CONFIG:
 
 -------------------------------------------------------------------------------------------------------- 
 
+API GROUPS: 
+
+    /version 
+    /api 
+    /apis 
+    /logs 
+    /metrics 
+    /healthz 
+
+    /api    - core group 
+    /apis   - named group 
+
+    /api/v1/namespace,pods, nodes etc 
+    /apis/v1/apps,extensions,networking.k8s.io,storage.k8s.io,certificates.k8s.io 
+
+    kubectl api-versions apps/v1 
+
+    kubeproxy       - used for service communication. 
+    kubectl proxy   - http proxy to access kube api-server. 
+
+-------------------------------------------------------------------------------------------------------- 
+
+AUTHORIZATION: 
+
+    what user/machine can to do (authorized).
+
+    Node Authorizer: 
+            It is based on the group SYSTEM:NODE which certificate created. 
+            With this group, kubelet is allowed to access kube api-server. 
+    
+    ABAC (Attribute Based Access Control): 
+            It is to define the policy file. 
+            policy file contains the user and required permissions. 
+            Require to edit the policy file manually and restart the api-server. 
+    
+    RBAC (Role based Access Control): 
+            Create the role with permissions. 
+            Assign the role to user. 
+            Just modify the role and reflect imeediately.
+            It is standard approach. 
+    
+    Webhook: 
+            Open Policy Agent: 
+                    3rd party which maintain access details. 
+                    kubernetes -> open policy agent 
+
+    Always Allow and Always Deny. 
+    
+    Authorization Mode is defined in Kube-apiserver config file: 
+        --authorization-mode=Node, RBAC, Webhook , AlwaysAllow (default)
+        First checks, if denies then move next role. 
+
+-------------------------------------------------------------------------------------------------------- 
+
+ROLE BASED ACCESS CONTROL (RBAC): 
+
+    It has scope of namespace. 
+
+    Role - to create the role 
+    Rolebinding - to link kin (user/group) to role. 
+
+    kubectl auth can-i create deployments 
+    kubectl auth can-i create deployments --as dev-user 
+
+    Clusterrole and Clusterrolebinding is happen at node level. 
+
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+
+-------------------------------------------------------------------------------------------------------- 
+
+
+
 
 
 

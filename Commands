@@ -272,11 +272,21 @@ KUBE CONFIG:
         use-context     Set the current-context in a kubeconfig file
         view            Display merged kubeconfig settings or a specified kubeconfig file
 
-    kubectl config view --kube-config=custom-config-file        -> To use custom config file. 
+    kubectl config view --kubeconfig=custom-config-file        -> To use custom config file. 
     kubectl config use-context user@cluster                     -> To change current context. 
 
     In Context, can give namespace. 
+        kubectl config set-cluster $(kubectl config current-context) --namespace=namespace-name 
 
 --------------------------------------------------------------------------------------------------------            
+ROLE BASED ACCESS CONTROL (RBAC): 
+
+    kubectl create role role-name --verb=*/get,list,watch --resource=pod,deployment     -> To create the role.
+
+    kubectl describe role role-name                                         -> To get the role information. 
+    kubectl create rolebinding bind-name --role=role-name --user=user-name  -> To create the role binding. 
+
+-------------------------------------------------------------------------------------------------------- 
+
 
 
