@@ -762,6 +762,129 @@ CLUSTER ROLES & CLUSTER ROLEBINDING:
 
 -------------------------------------------------------------------------------------------------------- 
 
+ADMISSION CONTROLLERS: 
+
+    kubectl -> kube api-server (authentication - certificates) -> authorization (rbac) -> Admission controllers (validate the yaml file) -> resource process. 
+
+    Admission Controller: 
+        AlwaysPullImages 
+        DefaultStorageClass 
+        EventRateLimit 
+        NamespaceExists 
+        NamespaceAutoProvision (it enable if not exists)
+        NamespaceLifeCycle 
+        etc 
+
+    kube-apiserver -h | grep enable-admission-plugins 
+
+    --enable-admission-plugins      -> apiserver config file.
+    --disable-admission-plugins     -> to disable the plugin. 
+
+    NamespaceExists and NamespaceAutoProvision admission controllers are deprecated and replaced by NamespaceLifecycle. 
+
+    NamespaceLifecycle - Requests to a non-existent namespace is rejected and that the default namespaces such as default, kube-system and kube-public cannot be deleted.
+
+-------------------------------------------------------------------------------------------------------- 
+
+VALIDATING AND MUTATING ADMISSION CONTROLLER: 
+
+    Admission Controller Types: 
+            Validating: 
+                NamespaceLifeCycle 
+            Mutating: (It changes the code)
+                DefaultStorageClass - It added the default storage class in yaml file. 
+            Both: 
+                Mutating invoke first -> Validating 
+    
+    Mutating Admission Webhook 
+    Validating Admission Webhook 
+    
+    1. Deploy Webhook server. (Receive request from kubernetes which mutate and validate the request and send the response in json to kubernetes)
+    2. Deploy the webhook server in kubernetes an create the service. 
+    3. Create the configuration: 
+            kind: ValidatingWebhookConfiguration
+    
+    kubectl create secret tls tls-secret-name --cert=path/to/.crt  --key=path/to/.key   -> To create the TLS secret. 
+
+-------------------------------------------------------------------------------------------------------- 
+
+API VERSIONS: 
+
+    /apis/apps/v1 
+
+    V1 - GA (Generally Available) Stable versions. 
+    /v1alpha    - not enabled by default. New functionality or code. 
+    /v1beta     - enabled by default. may have minor bugs. 
+    /v1         - stable version. 
+
+    apps can support any versions supports at the same time. It is done by using preferred version. 
+    Storage version is version stored in etcd. 
+
+    --runtime-config=batch/v1alpha    -> To update the kube apiserver configuration. 
+
+-------------------------------------------------------------------------------------------------------- 
+
+API DEPRECATIONS: 
+
+    /v1alpha -> /v1beta -> /v1 -> /v2alpha -> /v2beta -> /v2 
+
+    kubectl convert -f old-file.yml --output-version apps/v1    -> To convert from one version to another. 
+
+    kubectl convert is plugin and not available by default. 
+
+    kubectl api-resources | grep deployment              -> To identify the short name. 
+
+    1.22.3  -> 1 - major version, 22 - minor version , 3 - patch version 
+
+    To identify prefered version: 
+        kubectl proxy 8001&
+        curl localhost:8001/apis/authorization.k8s.io
+
+            {
+                "kind": "APIGroup",
+                "apiVersion": "v1",
+                "name": "authorization.k8s.io",
+                "versions": [
+                {
+                    "groupVersion": "authorization.k8s.io/v1",
+                    "version": "v1"
+                },
+                {
+                    "groupVersion": "authorization.k8s.io/v1beta1",
+                    "version": "v1beta1"
+                }
+                ],
+                "preferredVersion": {
+                "groupVersion": "authorization.k8s.io/v1",
+                "version": "v1"
+                }
+                
+    Enable the new version: 
+        
+        Add the --runtime-config=rbac.authorization.k8s.io/v1alpha1 option to the kube-apiserver.yaml file.
+
+    Install kubectl convert plugin: 
+
+        https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
+
+        
+-------------------------------------------------------------------------------------------------------- 
+
+CUSTOM RESOURCE DEFINITION: 
+
+    kind: CustomResourceDefinition
+
+-------------------------------------------------------------------------------------------------------- 
+
+CUSTOM CONTROLLER: 
+
+    
+
+
+
+
+
+
 
 
 

@@ -297,6 +297,11 @@ CLUSTER ROLE & CLUSTER ROLE BINDING:
     kubectl create clusterrolebinding --clusterrole=role-name --user=name --group=name -> To create the cluster role binding. 
 
 -------------------------------------------------------------------------------------------------------- 
+
+ADMISSION CONTROLLERS: 
+
+    kubectl exec -it kube-apiserver-controlplane  -n=kube-system -- kube-apiserver -h | grep 'enable-admission-plugins'         -> To check the enable-admission-flag details. 
+
     
 
 
