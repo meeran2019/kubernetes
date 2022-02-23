@@ -878,9 +878,90 @@ CUSTOM RESOURCE DEFINITION:
 
 CUSTOM CONTROLLER: 
 
+-------------------------------------------------------------------------------------------------------- 
+
+OPERATOR FRAMEWORK: 
+
+    Custom controller and Custom resource definition are separate objects. 
+    It can be combined as single package using operator framework. 
+
+    OperatorHub.io      -  has operator list.
+
+-------------------------------------------------------------------------------------------------------- 
+
+DEPLOYMENT STRATEGY - BLUE GREEN: 
+
+    Recreate        - Have downtime 
+    Rolling update  - one by one deploy. (default strategy)
+
+    Blue/Green: 
+        Blue    - Old version 
+        Green   - New version 
+    
+        1. Create the blue deployment with labels. 
+        2. Create the service with labels on blue deployment. 
+        3. Create the green environment with new labels. 
+        4. To update the service with new labels on green deployment. 
+        
+    Canary: 
+        It easily acheived by using servish mesh - istio 
+
+        1. Create the old deployment 1 (old)
+        2. create the new deployment 2. Contains one pod or lesser pod. 
+        3. Create service definition which selects both old and new deployment. 
+        4. To increase the pod in new deployment. 
+        5. reduce the old deployment or update the service labels. 
+
+-------------------------------------------------------------------------------------------------------- 
+
+HELM INTRODUCTION: 
+
+    Kubernetes considers only objects. 
+    In project, consists of large number of objects which need to take individually. 
+    Helm is consider as a package manager, which contains the required objects for the package/project. 
+
+    helm install 
+    helm upgrade 
+    helm rollback 
+    helm uninstall 
+
+INSTALL: 
+
+    https://helm.sh/docs/intro/install/
+
+
+HELM CONCEPTS:
+
+Helm Chart = Template + Values 
+
+    File Structure: 
+
+        templates 
+            deployment.yaml 
+            service.yaml 
+            pvc.yaml 
+                {{ .Values.storage }}
+        
+        values.yaml 
+            storage: 10Gi 
+
+    artifacthub.io, bitnami   -> Repository for helm chart. 
+     
+    helm install release-name chart-name 
+    helm pull --untar repo/chart-name 
+
+    helm search hub chart-name          -   to search chart in artifact repo.
+    helm repo add name chart-repo-name  -   to add repo repository. 
+    helm search repo chart-name         -   to search in repo. 
+    helm repo list                      -   to list the repositories 
+    helm install release-name repo-name/chartname   -   to install chart. 
+    helm list                           -   to list installed charts.
+    helm uninstall release-name         -   to uninstall chart. 
+    helm pull repo/chart-name           -   to download as tara file. 
+    helm pull --untar repo/chart-name   -   to untar 
     
 
-
+-------------------------------------------------------------------------------------------------------- 
 
 
 
