@@ -960,32 +960,4 @@ Helm Chart = Template + Values
     helm pull repo/chart-name           -   to download as tara file. 
     helm pull --untar repo/chart-name   -   to untar 
     
-
 -------------------------------------------------------------------------------------------------------- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
