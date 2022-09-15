@@ -284,9 +284,9 @@ MULTI CONTAINER PODS
 
     Types of Design Pattern: 
         Ambassador: 
-            Used for processing and data conversion. 
+            It is proxy. Used for external connection. Like connect to database.
         Adaptor: 
-            Used for plugin. To connect to database. 
+            Used for data conversion.
         Sidecar: 
             Used for logging. Install logging agent as sidecar container. 
 
