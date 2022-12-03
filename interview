@@ -6,5 +6,7 @@
 4. Headless service: 
       When client DNS to service, by default it return IP address of service.
       In headless, it returns the POD IPs. It require to set ClusterIP to None.
-5      
+5. Horizontal pod autoscaler:
+        Scale based on metric like cpu. It have scaledown and scaleup features. Can give min and max pods.
+6.        
      
