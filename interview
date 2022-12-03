@@ -1,0 +1,10 @@
+1. Self healing 
+2. Types of selector:
+        Equity - Based on ==, !=
+        Set based - based on exists, in, not in 
+3. Monitoring - Heap metrics
+4. Headless service: 
+      When client DNS to service, by default it return IP address of service.
+      In headless, it returns the POD IPs. It require to set ClusterIP to None.
+5      
+     
