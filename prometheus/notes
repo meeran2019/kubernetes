@@ -4,8 +4,10 @@ https://docs.aws.amazon.com/eks/latest/userguide/prometheus.html
 
 1. Create a namespace 
     kubectl create namespace prometheus
+
 2. Add the prometheus-community chart repository.
     helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+
 3. Deploy Prometheus.
     helm upgrade -i prometheus prometheus-community/prometheus \
     --namespace prometheus \
@@ -13,9 +15,15 @@ https://docs.aws.amazon.com/eks/latest/userguide/prometheus.html
 
 Issues Faced:
     prometheus server and alert server is in pending status.
-
     After adding policy "AmazonEBSCSIDriverPolicy" to Nodegroup Role, Server & Alert are able to create pod. 
 
-    
+4. Port forward from local host to pod.  (kubectl port-forward pod-name localhost-port:pod-port)
+    kubectl --namespace=prometheus port-forward deploy/prometheus-server 9090
+
+
+
+
+
+
 
 
