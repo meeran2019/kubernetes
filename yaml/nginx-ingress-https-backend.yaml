@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: nginx-ingress
   annotations:
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
 spec:
   rules:
   - host: "a26f9b63461484d6baf7944d002b2864-cf070ab5587fe381.elb.us-east-1.amazonaws.com"
@@ -16,7 +16,3 @@ spec:
             name: ngins-service
             port:
               number: 80
-  tls:
-  - hosts:
-    - app.myorg.com
-    secretName: tls-secret 

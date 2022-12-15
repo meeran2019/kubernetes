@@ -21,7 +21,11 @@ Installation:
     With HTTPS (Decrypt happen on ingress):
 
         1. refer the nginx-ingress-https.yaml
-        2. 
+        2. Use TLS block in ingress resource. 
+
+    With HTTPS (Decrypt happens in pod):
+
+        1. 
 
 
 Issues Faced: 
