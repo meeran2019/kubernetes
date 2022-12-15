@@ -5,8 +5,9 @@ metadata:
     run: awscli
   name: oidc-awscli
 spec:
-  serviceAccountName: oidc-service-account
-  command: ["sleep","600"]
+  serviceAccountName: oidc-service-account  
   containers:
   - image: amazon/aws-cli
     name: oidc-awscli
+    command: ["sleep","600"]
+    

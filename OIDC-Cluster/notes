@@ -2,6 +2,7 @@
 https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html
 
 It helps to allow to use IAM roles for service accounts:
+        In other words, it allows pod to use AWS services. 
 
 To create an IAM OIDC identity provider for your cluster with the AWS Management Console:
 
@@ -53,4 +54,9 @@ Configure pods to use service account:
         AWS_REGION:                   us-east-1
         AWS_ROLE_ARN:                 arn:aws:iam::178551559014:role/oidceksrole
         AWS_WEB_IDENTITY_TOKEN_FILE:  /var/run/secrets/eks.amazonaws.com/serviceaccount/token
+        
+
+Issues Faced: 
+        1. Annotation is needed in service account. If not maintained, it wont use the role. 
+        2. In POD, AWS CLI has to be installed.
         
