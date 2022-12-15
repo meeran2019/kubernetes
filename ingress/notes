@@ -32,4 +32,5 @@ https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annota
 
 Issues Faced: 
     1. Cannot generate self signed certificate as FQDN is longer.
-    
+    2. When tried to curl using ELB, it doesnot working. It could be because of NLB is using. 
+        
