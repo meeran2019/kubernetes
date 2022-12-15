@@ -1,0 +1,13 @@
+
+https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html
+
+It helps to allow to use IAM roles for service accounts:
+
+To create an IAM OIDC identity provider for your cluster with the AWS Management Console:
+        1. IAM -> Identity provider -> Add provider. 
+        2. Audience is CLient ID -> To use "sts.amazonaws.com"
+        3. create an IAM role and attach to oidc.
+
+
+To associate an IAM role with a Kubernetes service account:
+        
