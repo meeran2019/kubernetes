@@ -1,0 +1,43 @@
+
+https://docs.newrelic.com/docs/kubernetes-pixie/kubernetes-integration/installation/kubernetes-integration-install-configure/
+
+1. Guided install give the related manifest or helm chart to deploy. 
+    Enter the cluster name and continue.
+2. For authentication, helm chart uses .kube/config file.
+3. 
+
+
+helm repo add newrelic https://helm-charts.newrelic.com && helm repo update && \
+kubectl create namespace newrelic ; helm upgrade --install newrelic-bundle newrelic/nri-bundle \
+ --set global.licenseKey=9115a668ba50a8a6110964b999b31eb055a9NRAL \
+ --set global.cluster=demo-cluster \
+ --namespace=newrelic \
+ --set newrelic-infrastructure.privileged=true \
+ --set global.lowDataMode=true \
+ --set ksm.enabled=true \
+ --set kubeEvents.enabled=true \
+ --set newrelic-prometheus-agent.enabled=true \
+ --set newrelic-pixie.enabled=false \
+ --set newrelic-pixie.apiKey=px-api-eb1ac8eb-4e9d-466b-9811-20293140d448 \
+ --set pixie-chart.enabled=true \
+ --set pixie-chart.deployKey=px-dep-2cc20dd8-f272-41e1-baea-2fb258818d80 \
+ --set pixie-chart.clusterName=demo-cluster 
+
+ Issue Faced: 
+    Getting timeout when install by using helm. so tried disable pixie.
+
+    NOTE: Pods are in penidng status. Issue related to cluster where no of pod depends upon instance type. 
+    For c series instance type, gives maximum 737 pods per node.
+
+    helm repo add newrelic https://helm-charts.newrelic.com && helm repo update && \
+    kubectl create namespace newrelic ; helm upgrade --install newrelic-bundle newrelic/nri-bundle \
+ --set global.licenseKey=9115a668ba50a8a6110964b999b31eb055a9NRAL \
+ --set global.cluster=demo-cluster \
+ --namespace=newrelic \
+ --set newrelic-infrastructure.privileged=true \
+ --set global.lowDataMode=true \
+ --set ksm.enabled=true \
+ --set kubeEvents.enabled=true \
+ --set newrelic-prometheus-agent.enabled=true 
+
+
