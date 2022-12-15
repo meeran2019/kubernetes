@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: awscli
+  name: oidc-awscli
+spec:
+  serviceAccountName: oidc-service-account
+  command: ["sleep","600"]
+  containers:
+  - image: amazon/aws-cli
+    name: awscli

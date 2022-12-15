@@ -4,10 +4,53 @@ https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-ac
 It helps to allow to use IAM roles for service accounts:
 
 To create an IAM OIDC identity provider for your cluster with the AWS Management Console:
+
         1. IAM -> Identity provider -> Add provider. 
         2. Audience is CLient ID -> To use "sts.amazonaws.com"
         3. create an IAM role and attach to oidc.
 
 
+                {
+        "Version": "2012-10-17",
+        "Statement": [
+                {
+            "Effect": "Allow",
+            "Principal": {
+                "Federated": "arn:aws:iam::111111111:oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/900F1BAAAAAAAAAAAF"
+            },
+            "Action": "sts:AssumeRoleWithWebIdentity",
+            "Condition": {
+                "StringEquals": {
+                    "oidc.eks.us-east-1.amazonaws.com/id/900FAAAAAAAAAAAAAAA:aud": "sts.amazonaws.com",
+                    "oidc.eks.us-east-1.amazonaws.com/id/900FAAAAA1AAAAAAAAA:sub": "system:serviceaccount:default:oidc-service-account"
+                                }
+                        }
+                        }
+                ]
+                }
+
+
 To associate an IAM role with a Kubernetes service account:
+
+        1. Create a service account, role & role binding. (refer yaml folder)
+        2. Under role, in trust relationship, attach the service account. 
+                "oidc.eks.us-east-1.amazonaws.com/id/900FAAAAA1AAAAAAAAA:sub": "system:serviceaccount:default:oidc-service-account"
+        3. Annotate service account with role ARN. 
+                kubectl annotate serviceaccount -n $namespace $service_account eks.amazonaws.com/role-arn=arn:aws:iam::$account_id:role/my-role
+                kubectl annotate serviceaccount -n default oidc-service-account arn:aws:iam::178551559014:role/oidceksrole
+
+        aws iam get-role --role-name oidceksrole --query Role.AssumeRolePolicyDocument
+
+
+Configure pods to use service account:
+
+        1. Create a pod with serviceaccountname.
+        2. Once pod is created, verify whether environment variable is created.
+
+        Environment:
+        AWS_STS_REGIONAL_ENDPOINTS:   regional
+        AWS_DEFAULT_REGION:           us-east-1
+        AWS_REGION:                   us-east-1
+        AWS_ROLE_ARN:                 arn:aws:iam::178551559014:role/oidceksrole
+        AWS_WEB_IDENTITY_TOKEN_FILE:  /var/run/secrets/eks.amazonaws.com/serviceaccount/token
         

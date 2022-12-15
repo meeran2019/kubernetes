@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oidc-deployment
+spec:
+  selector:
+    matchLabels:
+      app: oidc-pod
+  template:
+    metadata:
+      labels:
+        app: oidc-pod
+    spec:
+      serviceAccountName: oidc-service-account
+      containers:
+      - name: oidc-pod
+        image: public.ecr.aws/nginx/nginx:1.21
