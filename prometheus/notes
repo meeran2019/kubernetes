@@ -19,5 +19,3 @@ Issues Faced:
 
 4. Port forward from local host to pod.  (kubectl port-forward pod-name localhost-port:pod-port)
     kubectl --namespace=prometheus port-forward deploy/prometheus-server 9090
-
-

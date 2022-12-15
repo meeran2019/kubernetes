@@ -3,9 +3,10 @@ https://docs.newrelic.com/docs/kubernetes-pixie/kubernetes-integration/installat
 
 1. Guided install give the related manifest or helm chart to deploy. 
     Enter the cluster name and continue.
-2. For authentication, helm chart uses .kube/config file.
-3. 
 
+2. For authentication, helm chart uses .kube/config file.
+
+3. In below helm, pixel is added, 
 
 helm repo add newrelic https://helm-charts.newrelic.com && helm repo update && \
 kubectl create namespace newrelic ; helm upgrade --install newrelic-bundle newrelic/nri-bundle \
@@ -27,7 +28,10 @@ kubectl create namespace newrelic ; helm upgrade --install newrelic-bundle newre
     Getting timeout when install by using helm. so tried disable pixie.
 
     NOTE: Pods are in penidng status. Issue related to cluster where no of pod depends upon instance type. 
-    For c series instance type, gives maximum 737 pods per node.
+    For c series instance type, gives maximum 737 pods per node. For t3 medium, upto 17 pods. 
+
+
+In below pixel is removed, 
 
     helm repo add newrelic https://helm-charts.newrelic.com && helm repo update && \
     kubectl create namespace newrelic ; helm upgrade --install newrelic-bundle newrelic/nri-bundle \
@@ -39,5 +43,3 @@ kubectl create namespace newrelic ; helm upgrade --install newrelic-bundle newre
  --set ksm.enabled=true \
  --set kubeEvents.enabled=true \
  --set newrelic-prometheus-agent.enabled=true 
-
-
