@@ -1,0 +1,29 @@
+
+This involves nginx ingress controller and ingress resources.
+
+https://docs.nginx.com/nginx-ingress-controller/installation/installation-with-manifests/
+
+
+Installation:
+
+    1. To refer the documentation and follow the procedure of manifest.
+    2. common/default-server-secret.yaml - Use our certificate and key instead of default one.
+    3. common/ingress-class.yaml - Update the annotation, so this ingress class is default assign to new ingresses without ingressClassName.
+    4. Custom resource definition - By default, it is required to create custom resource definitions for VirtualServer, VirtualServerRoute, TransportServer and Policy. Otherwise, the Ingress Controller pods will not become Ready
+    5. service/loadbalancer-aws-elb.yaml  -> This create network load balancer. 
+        NOTE: AWS ELB IP address are not static, so DNS name should be used. 
+    6. Created the pod and exposed the service to that pod.
+
+    With HTTP:
+
+        1. Created the ingress resource (refer nginx-ingress-http.yaml)
+
+    With HTTPS (Decrypt happen on ingress):
+
+        1. refer the nginx-ingress-https.yaml
+        2. 
+
+
+Issues Faced: 
+    1. Cannot generate self signed certificate as FQDN is longer.
+    

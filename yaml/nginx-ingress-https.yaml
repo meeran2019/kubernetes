@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  annotations:
+    
+spec:
+  rules:
+  - host: "a26f9b63461484d6baf7944d002b2864-cf070ab5587fe381.elb.us-east-1.amazonaws.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: ngins-service
+            port:
+              number: 80
