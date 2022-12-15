@@ -9,4 +9,4 @@ spec:
   command: ["sleep","600"]
   containers:
   - image: amazon/aws-cli
-    name: awscli
+    name: oidc-awscli
