@@ -27,6 +27,8 @@ Installation:
 
         1. 
 
+https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/#ssl-passthrough
+
 
 Issues Faced: 
     1. Cannot generate self signed certificate as FQDN is longer.
