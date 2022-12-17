@@ -6,13 +6,13 @@ metadata:
   #   nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: "a26f9b63461484d6baf7944d002b2864-cf070ab5587fe381.elb.us-east-1.amazonaws.com"
+  - host: "sheikmeeran.com"
     http:
       paths:
       - pathType: Prefix
         path: /
         backend:
           service:
-            name: ngins-service
+            name: nginx-service
             port:
-              number: 80              
+              number: 80
