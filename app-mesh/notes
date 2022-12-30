@@ -1,0 +1,12 @@
+
+App mesh is like ISTIO used for service discovery and networking of services.
+It helps to route the percentage of traffic to services. 
+It uses ENVOY proxy.
+It consists of,
+    Virtual Service
+    Virtual Node
+    Virtual Router 
+
+Steps: 
+    1. Create the ECR registry.
+    2. 
