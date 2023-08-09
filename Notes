@@ -913,7 +913,24 @@ DEPLOYMENT STRATEGY - BLUE GREEN:
         5. reduce the old deployment or update the service labels. 
 
 -------------------------------------------------------------------------------------------------------- 
+ADDITIONAL TOPICS
+-------------------------------------------------------------------------------------------------------- 
 
+POD DISTRUPTION BUDGET:
+
+    It is used to prevent high availability pods from voluntary termination like cluster update etc. 
+
+    apiVersion: policy/v1beta1
+    kind: PodDisruptionBudget
+    metadata:
+     name: PDB-NAME
+    spec:
+     minAvailable: 2
+     selector:
+       matchLabels:
+         KEY1: VALUE1
+
+-------------------------------------------------------------------------------------------------------- 
 HELM INTRODUCTION: 
 
     Kubernetes considers only objects. 
